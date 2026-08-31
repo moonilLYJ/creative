@@ -1,4 +1,74 @@
 import streamit as st
-
 st.title('나의 첫 streamit 프로젝트!')
-st.write('hello streamit')
+def recommend_exercises(weakness):
+    # 유소년 축구 선수 맞춤형 운동 데이터베이스
+    exercise_db = {
+        "속도": {
+            "맨몸 운동": [
+                "A-스킵 (A-Skip) - 무릎을 높이 들며 달리는 동작으로 주법 교정 및 스피드 향상",
+                "카프 레이즈 (Calf Raise) - 종아리 근육 강화로 폭발적인 스타트 능력 배양",
+                "단거리 가속 달리기 (Acceleration Sprints) - 10m~20m 전력 질주"
+            ],
+            "웨이트": [
+                "바벨 힙스러스트 (Barbell Hip Thrust) - 강력한 엉덩이 근육으로 전진 가속력 강화",
+                "덤벨 루마니안 데드리프트 - 햄스트링과 둔근의 협응력 및 파워 증대",
+                "바벨 스쿼트 (가벼운 중량) - 하체 전반의 파워 및 지면 반발력 향상"
+            ],
+            "기구 운동": [
+                "레그 프레스 (Leg Press) - 안전한 고중량 저항을 통한 하체 근력 극대화",
+                "햄스트링 컬 머신 - 스프린트 시 부상 방지 및 뒤쪽 하체 강화",
+                "케이블 풀스루 (Cable Pull-Through) - 고관절 신전 능력 및 순간 스피드 개발"
+            ]
+        },
+        "지구력": {
+            "맨몸 운동": [
+                "버피 테스트 (Burpee) - 전신 근력과 심폐 지구력을 동시에 향상",
+                "마운틴 클라이머 (Mountain Climber) - 코어 안정성과 고강도 인터벌 심폐 단련",
+                "제자리 고강도 하이니스 (High Knees) - 쉴 틈 없는 러닝 스태미나 강화"
+            ],
+            "웨이트": [
+                "바벨 클린 (Light Weight Clean) - 전신 폭발력과 쉴 새 없는 대사량 소모 유도",
+                "덤벨 스러스터 (Dumbbell Thruster) - 스쿼트와 프레스를 결합한 전신 유산소성 웨이트",
+                "케틀벨 스윙 - 후면 사슬 강화 및 심폐 지구력 극대화"
+            ],
+            "기구 운동": [
+                "로잉 머신 (Rowing Machine) - 상하체 통합 유산소 및 심폐 지구력 단련",
+                "어썰트 바이크 (Assault Bike) - 전신을 활용한 최고 강도의 인터벌 트레이닝",
+                "스키 에르고미터 (Ski Erg) - 상체 중심의 지구력 및 코어 지구력 향상"
+            ]
+        },
+        "근력": {
+            "맨몸 운동": [
+                "푸시업 (Push-up) - 상체 전면(가슴, 삼두, 어깨) 및 코어 안정화",
+                "풀업 / 인버티드 로우 (Pull-up / Inverted Row) - 경합 시 밀리지 않는 등과 팔 근육 강화",
+                "불가리안 스플릿 스쿼트 (Bulgarian Split Squat) - 한 발로 버티는 균형 및 하체 근력"
+            ],
+            "웨이트": [
+                "백 스쿼트 (Back Squat) - 축구 선수에게 필수적인 전반적인 하체 근력 기반 구축",
+                "벤치 프레스 (Bench Press) - 상체 미는 힘 및 몸싸움 능력 향상",
+                "오버헤드 프레스 (Overhead Press) - 코어 안정성과 어깨·팔 상체 근력 강화"
+            ],
+            "기구 운동": [
+                "랫 풀다운 (Lat Pulldown) - 등 상부 및 팔 근력 강화로 상체 프레임 보완",
+                "체스트 프레스 머신 - 안정적인 자세에서 가슴 근육의 최대 수축 유도",
+                "시티드 로우 머신 - 후면 등 근육을 단단하게 만들어 몸싸움 시 밸런스 유지"
+            ]
+        }
+    }
+
+    # 입력값 검증 및 결과 반환
+    if weakness in exercise_db:
+        print(f"\n[{weakness}] 보완을 위한 맞춤형 축구 운동 추천:\n")
+        for category, exercises in exercise_db[weakness].items():
+            print(f"- {category}:")
+            for ex in exercises:
+                print(f"  * {ex}")
+        print("\n* 유소년 선수들은 성장판에 무리가 가지 않도록 반드시 정확한 자세와 적정 강도로 수행해야 합니다.")
+    else:
+        print("등록되지 않은 부족한 부분입니다. '속도', '지구력', '근력' 중 하나를 입력해 주세요.")
+
+# 프로그램 실행 예시
+if __name__ == "__main__":
+    # 사용자가 '속도'가 부족하다고 입력한 경우 예시
+    user_input = "속도" 
+    recommend_exercises(user_input)
