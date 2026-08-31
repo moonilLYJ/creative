@@ -1,5 +1,4 @@
 import streamit as st
-st.title('나의 첫 streamit 프로젝트!')
 def recommend_exercises(weakness):
     # 유소년 축구 선수 맞춤형 운동 데이터베이스
     exercise_db = {
