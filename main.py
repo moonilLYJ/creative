@@ -1,3 +1,4 @@
+import streamit as st
 def recommend_soccer_exercises():
     # 유소년 축구 맞춤형 운동 데이터베이스 (전체 단점 확장)
     exercise_database = {
